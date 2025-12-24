@@ -1,0 +1,241 @@
+/* Header hero - mosaic */
+
+.header-hero__images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 120px;
+  gap: 16px;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+}
+
+/* Mosaic items */
+.mosaic-item {
+  width: 100%;
+  height: 100%;
+  max-width: 220px;
+  max-height: 220px;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface, #f5f5f5);
+  box-shadow: 0 6px 18px rgba(12, 20, 36, 0.06);
+  transition: transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 360ms ease,
+    box-shadow 360ms ease;
+  transform-origin: center;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+}
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Size variations for visual rhythm */
+.item-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  max-width: 280px;
+  max-height: 280px;
+  border-radius: 48px;
+}
+.item-2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  max-width: 180px;
+  max-height: 180px;
+}
+.pencil {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  width: 110px;
+  height: 110px;
+  border-radius: 28px;
+}
+.item-4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  max-width: 160px;
+  max-height: 160px;
+  border-radius: 80px;
+}
+.item-5 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  max-width: 160px;
+  max-height: 160px;
+  border-radius: 80px;
+}
+.bubble-only.employee {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  width: 108px;
+  height: 108px;
+}
+.bubble-only.crown {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  width: 108px;
+  height: 108px;
+}
+
+/* bubbles inside items */
+.bubble {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 18px;
+  transform: translateY(10px) scale(0.9);
+  opacity: 0;
+  transition: transform 360ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 300ms ease,
+    box-shadow 300ms ease;
+  box-shadow: 0 6px 14px rgba(12, 20, 36, 0.12);
+  pointer-events: none;
+}
+.mosaic-item .bubble {
+  right: 8px;
+  top: 8px;
+}
+.pencil-bubble {
+  left: 8px;
+  top: 8px;
+  background: #6633ff;
+}
+.love-bubble {
+  right: 6px;
+  top: 6px;
+  background: #ff9aa2;
+}
+.employee-bubble {
+  right: 8px;
+  top: 8px;
+  background: #f4d35e;
+  color: #1b1b1b;
+}
+.crown-bubble {
+  background: #ffd166;
+  color: #6b3b00;
+}
+
+/* show bubble on hover/focus or when .animate is toggled */
+.mosaic-item:focus,
+.mosaic-item:hover {
+  transform: translateY(0) scale(1.02);
+  box-shadow: 0 10px 30px rgba(12, 20, 36, 0.12);
+}
+.mosaic-item:focus .bubble,
+.mosaic-item:hover .bubble,
+.bubble.animate {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Entrance stagger when container becomes visible */
+.header-hero__images.is-visible .mosaic-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.header-hero__images.is-visible .mosaic-item:nth-of-type(1) {
+  transition-delay: 0ms;
+}
+.header-hero__images.is-visible .mosaic-item:nth-of-type(2) {
+  transition-delay: 80ms;
+}
+.header-hero__images.is-visible .mosaic-item:nth-of-type(3) {
+  transition-delay: 160ms;
+}
+.header-hero__images.is-visible .mosaic-item:nth-of-type(4) {
+  transition-delay: 240ms;
+}
+.header-hero__images.is-visible .mosaic-item:nth-of-type(5) {
+  transition-delay: 320ms;
+}
+.header-hero__images.is-visible .mosaic-item:nth-of-type(6) {
+  transition-delay: 400ms;
+}
+.header-hero__images.is-visible .mosaic-item:nth-of-type(7) {
+  transition-delay: 480ms;
+}
+
+/* responsive layout adjustments */
+@media (max-width: 1000px) {
+  .header-hero__images {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 110px;
+    gap: 12px;
+    max-width: 440px;
+  }
+  .item-1 {
+    grid-row: 1 / 3;
+  }
+}
+@media (max-width: 720px) {
+  .header-hero__images {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+    max-width: 360px;
+  }
+  .item-1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    max-width: none;
+  }
+  .item-2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .pencil {
+    display: none;
+  }
+  .bubble-only {
+    display: none;
+  }
+}
+@media (max-width: 420px) {
+  .header-hero__images {
+    grid-template-columns: 1fr;
+    max-width: 180px;
+    gap: 12px;
+  }
+  .item-1,
+  .item-4,
+  .item-5 {
+    max-width: 160px;
+  }
+}
+
+/* a little floating animation for active bubbles */
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bubble.animate {
+  animation: floaty 1400ms ease-in-out;
+}
+
+/* small accessibility focus styles */
+.mosaic-item:focus {
+  outline: 3px solid rgba(99, 102, 241, 0.15);
+  outline-offset: 4px;
+}

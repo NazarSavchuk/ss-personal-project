@@ -115,6 +115,7 @@ h6 {
     "Helvetica Neue", Arial, sans-serif;
   --text-color-primary: #000000;
   --text-color-secondary: #ffffff;
+  --text-color-tertiary: rgba(0, 0, 0, 0.6);
   --bg-color-interaction: #3461ff;
   --bg-color-interaction-hover: #2b51d8;
   --stroke-base-color: rgba(0, 0, 0, 0.2);

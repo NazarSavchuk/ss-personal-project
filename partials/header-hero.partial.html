@@ -1,49 +1,74 @@
-   <section class="header-hero">
-        <div class="header-hero__content">
-          <h1>We Take Care of Your Brand</h1>
-          <p class="main-title__subtitle">
-            We care about our work and we care about our clients.
-          </p>
-          <form class="contact-form">
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit">Lets Talk</button>
-          </form>
-        </div>
-        <div class="header-hero__images">
-          <div class="top-row">
-            <img
-              src="./img/header-hero/customer-1.jpg"
-              alt="Customer 1"
-              class="image-1"
-            />
-            <div class="image-2__container">
-              <img
-                src="./img/header-hero/customer-2.jpg"
-                alt="Customer 2"
-                class="image-2"
-              />
-              <span class="love-emoji__container">😍</span>
-            </div>
-          </div>
-          <div class="middle-row">
-            <span class="pencil-emoji__container">✏️</span>
-            <img
-              src="./img/header-hero/customer-3.jpg"
-              alt="Customer 3"
-              class="image-4"
-            />
-          </div>
-          <div class="bottom-row">
-            <div class="image-5__container">
-              <img
-                src="./img/header-hero/customer-4.jpg"
-                alt="Customer 4"
-                class="image-5"
-              />
-              <span class="employee-emoji__container">🤌</span>
-            </div>
-            <span class="employee-emoji__container">👩🏻‍💻</span>
-            <span class="crown-emoji__container">👑</span>
-          </div>
-        </div>
-      </section>
+<section class="header-hero container">
+  <div class="header-hero__content">
+    <h1 class="main-title">We Take Care of Your Brand</h1>
+    <p class="main-title__subtitle">
+      We care about our work and we care about our clients.
+    </p>
+    <form class="contact-form">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        class="contact-form__input"
+        name="email"
+      />
+      <button type="submit" class="contact-form__button button-primary">
+        Lets Talk
+      </button>
+    </form>
+  </div>
+
+  <!-- Mosaic images: each item is focusable for keyboard access -->
+  <div class="header-hero__images" aria-hidden="false">
+    <div class="mosaic-item item-1" tabindex="0">
+      <img
+        src="./img/header-hero/customer-1.jpg"
+        alt="Happy customer 1"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div class="mosaic-item item-2" tabindex="0">
+      <img
+        src="./img/header-hero/customer-2.jpg"
+        alt="Happy customer 2"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="bubble love-bubble" aria-hidden="true">😍</span>
+    </div>
+
+    <div class="mosaic-item bubble-only pencil" aria-hidden="true">
+      <span class="bubble pencil-bubble">✏️</span>
+    </div>
+
+    <div class="mosaic-item item-4" tabindex="0">
+      <img
+        src="./img/header-hero/customer-3.jpg"
+        alt="Happy customer 3"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div class="mosaic-item item-5" tabindex="0">
+      <img
+        src="./img/header-hero/customer-4.jpg"
+        alt="Happy customer 4"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="bubble employee-bubble" aria-hidden="true">🤌</span>
+    </div>
+
+    <div class="mosaic-item bubble-only employee" aria-hidden="true">
+      <span class="bubble dev-bubble">👩🏻‍💻</span>
+    </div>
+
+    <div class="mosaic-item bubble-only crown" aria-hidden="true">
+      <span class="bubble crown-bubble">👑</span>
+    </div>
+  </div>
+
+  <script src="/assets/js/header-hero.js" defer></script>
+</section>
