@@ -4,66 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Embrace — We Take Care Of Your Brand | Branding Agency</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"
+      integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header class="header">
-      <nav class="nav">
-        <a href="/" class="logo"
-          ><img
-            src="img/embrace-logo.svg"
-            alt="Embrace — We Take Care Of Your Brand | Branding Agency"
-        /></a>
-        <ul>
-          <li><a href="/how-it-works">How It Works</a></li>
-          <li><a href="/our-work">Our Work</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/about-us">About Us</a></li>
-        </ul>
-      </nav>
-      <a href="/book-a-call" class="cta-button">Book A Call</a>
-    </header>
+    <header
+      class="header"
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="partials/header.partial.html"
+    ></header>
     <main>
-      <div class="header-hero">
-        <div class="header-hero__content">
-          <h1>We Take Care of Your Brand</h1>
-          <p class="main-title__subtitle">
-            We care about our work and we care about our clients.
-          </p>
-          <form class="contact-form">
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit">Lets Talk</button>
-          </form>
-        </div>
-        <div class="header-hero__images">
-          <div class="top-row">
-            <img
-              src="./img/header-hero/customer-1.jpg"
-              alt="Customer 1"
-              class="image-1"
-            />
-            <div class="image-2__container">
-              <img
-                src="./img/header-hero/customer-2.jpg"
-                alt="Customer 2"
-                class="image-2"
-              />
-              <span class="love-emoji__container">😍</span>
-            </div>
-          </div>
-          <div class="middle-row">
-            <span class="pencil-emoji__container">✏️</span>
-            <img src="./img/header-hero/customer-3.jpg" alt="Customer 3" class="image-4" />
-          </div>
-          <div class="bottom-row">
-            <div class="image-5__container">
-              <img src="./img/header-hero/customer-4.jpg" alt="Customer 4" class="image-5" />
-              <span class="employee-emoji__container">🤌</span>
-            </div>
-            <span class="employee-emoji__container">👩🏻‍💻</span>
-            <span class="crown-emoji__container">👑</span>
-          </div>
-        </div>
-      </div>
+      <section
+        class="header-hero"
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="partials/header-hero.partial.html"
+      ></section>
     </main>
   </body>
 </html>

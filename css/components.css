@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+    padding: 0 24px;
+  @media screen and (min-width: 998px) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.button-primary {
+  color: var(--text-color-secondary);
+  background-color: var(--bg-color-interaction);
+  padding: 16px 24px;
+  border-radius: 32px;
+  transition: background-color 0.1s ease-in-out;
+  &:hover {
+    background-color: var(--bg-color-interaction-hover);
+  }
+}
